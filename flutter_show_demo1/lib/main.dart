@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'dart:ui' as ui;
-import 'apple_present.dart';
+import 'package:flutter_show_demo1/present/apple_present.dart';
 import 'apple_push.dart';
 import 'flutter_page.dart';
-import 'flutter_push_page.dart';
 
 void main() => runApp(_widgetForRoute(ui.window.defaultRouteName));
 
 Widget _widgetForRoute(String route) {
-  return new FlutterPushPage(titleString:"title", contentString:"content");
+//  return new FlutterPushPage(titleString: "titleString", contentString: "contentString",);
+//  return new PresentApp();
   switch (route) {
     case 'applePresent':
       return new PresentApp();
