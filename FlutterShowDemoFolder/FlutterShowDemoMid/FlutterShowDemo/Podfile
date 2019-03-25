@@ -1,0 +1,6 @@
+platform :ios, '10.1'
+use_frameworks!
+target 'FlutterShowDemo' do
+end
+flutter_application_path = '../../../flutter_show_demo1/'
+eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)
