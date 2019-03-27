@@ -1,6 +1,10 @@
 # flutterCode
 flutterCode
 
+flutter_show_demo1 文件夹方的放的是flutter项目可单独运行但需要修改flutter_show_demo1/lib/main.dart中代码 直接返回switch中任意一个..App()即可
+
+FlutterShowDemoFolder 文件夹放的是iOS的工程  包含调用flutter_show_demo1功能  使用时flutter_show_demo1/lib/main.dart中代码不可调整
+
 Flutter简介
 
 Flutter 是 Google推出并开源的移动应用开发框架，主打跨平台、高保真、高性能。开发者可以通过 Dart语言开发 App，一套代码同时运行在 iOS 和 Android平台。 Flutter提供了丰富的组件、接口，开发者可以很快地为 Flutter添加 native扩展。同时 Flutter还使用 Native引擎渲染视图，这无疑能为用户提供良好的体验。
@@ -85,6 +89,8 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 
 2. 下载Flutter SDK
+
+
 [官网下载](https://flutter.dev/docs/development/tools/sdk/releases?tab=macos#macos)
 [Github下载](https://github.com/flutter/flutter)
 
