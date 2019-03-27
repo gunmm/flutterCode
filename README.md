@@ -85,10 +85,9 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 
 2. 下载Flutter SDK
+[官网下载](https://flutter.dev/docs/development/tools/sdk/releases?tab=macos#macos)
+[Github下载](https://github.com/flutter/flutter)
 
-官网下载
-
-Github下载
 
 3. 修改环境变量
 
@@ -117,7 +116,7 @@ Flutter使用
 
 Flutter加入到iOS已有项目
 
-参考Add-Flutter-to-existing-apps   
+参考[Add-Flutter-to-existing-apps](https://github.com/flutter/flutter/wiki/Add-Flutter-to-existing-apps)   
 
 1.创建flutter项目
 
@@ -161,7 +160,7 @@ eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper
 
 Flutter与iOS交互platform channel
 
-参考：平台通道简介
+参考：[平台通道简介](https://book.flutterchina.club/chapter11/platform-channel.html)   
 
 MethodChannel: 传递方法调用
 
@@ -241,8 +240,8 @@ Flutter使用Skia作为其2D渲染引擎，Skia是Google的一个2D图形处理�
 
 
 Flutter调用原生功能
+[Flutter for iOS 开发者](https://flutterchina.club/flutter-for-ios/)   
 
-Flutter for iOS 开发者
 
-插件开发参考 链接
+插件开发参考 [链接](https://book.flutterchina.club/chapter11/)   
 
