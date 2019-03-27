@@ -1,5 +1,6 @@
 # flutterCode
 flutterCode
+
 Flutter简介
 
 Flutter 是 Google推出并开源的移动应用开发框架，主打跨平台、高保真、高性能。开发者可以通过 Dart语言开发 App，一套代码同时运行在 iOS 和 Android平台。 Flutter提供了丰富的组件、接口，开发者可以很快地为 Flutter添加 native扩展。同时 Flutter还使用 Native引擎渲染视图，这无疑能为用户提供良好的体验。
@@ -68,8 +69,8 @@ Flutter高性能主要靠两点来保证
 
 
 Flutter安装
+ 参考[Flutter中文网](https://flutterchina.club/setup-macos/)
 
-参考Flutter中文网
 
 1. 使用镜像
 
