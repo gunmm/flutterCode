@@ -48,6 +48,7 @@ class HomePageContentState extends State<HomePageContent> {
             padding: EdgeInsets.all(10),
             child: Column(
               children: <Widget>[
+                //大文字
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.red,
@@ -71,6 +72,8 @@ class HomePageContentState extends State<HomePageContent> {
                     ),
                   ),
                 ),
+
+                //按钮
                 Wrap(
                   spacing: 8.0, // 主轴(水平)方向间距
                   crossAxisAlignment: WrapCrossAlignment.start, //设置对齐方式
@@ -114,8 +117,7 @@ class HomePageContentState extends State<HomePageContent> {
                   ],
                 ),
 
-
-
+                //输入框
                 TextField(
                   controller: _textEditingController,
                   onChanged: (v) {
@@ -130,6 +132,7 @@ class HomePageContentState extends State<HomePageContent> {
                   ),
                 ),
 
+                //显示框
                 Wrap(
                   children: <Widget>[
                     Container(
@@ -181,7 +184,7 @@ class HomePageContentState extends State<HomePageContent> {
                   ],
                 ),
 
-
+                //按钮
                 Wrap(
                   spacing: 20,
                   children: <Widget>[
@@ -219,6 +222,133 @@ class HomePageContentState extends State<HomePageContent> {
                   ],
                 ),
 
+                //仿cell
+                Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(3.0), //3像素圆角
+                    color: Colors.black12,
+//                    gradient: LinearGradient(
+//                        colors: [Colors.black12, Colors.black12]), //背景
+                  ),
+//                  color: Colors.black12,
+                  height: 80,
+                  child: Row(
+                    children: <Widget>[
+                      Container(
+                        width: 40,
+                        height: 40,
+                        margin: EdgeInsets.only(left: 13),
+                        child: Stack(
+                          alignment:Alignment.center ,
+                          fit: StackFit.expand,
+                          children: <Widget>[
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(50),
+                              child: FadeInImage.assetNetwork(
+                                placeholder: "images/image2.png",
+                                image: "netUrl",
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            Positioned(
+                              width: 15,
+                              height: 15,
+                              bottom: 0,
+                              right: 0,
+                              child: Image(
+                                image: AssetImage("images/big_v_yellow.png"),
+                              ),
+                            ),
+                          ],
+                        ),
+
+
+
+                      ),
+                      Expanded(
+                          child: Container(
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: <Widget>[
+                                Container(
+                                  margin: EdgeInsets.only(left: 10, bottom: 4, right: 10),
+                                  child: Text("爱吃鸭脖的YZ爱",
+                                    maxLines: 1,
+                                    overflow: TextOverflow.ellipsis,
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.normal,
+                                      color: Colors.black54,
+                                    ),
+                                  ),
+                                ),
+                                Container(
+                                  margin: EdgeInsets.only(left: 10,top: 4, right: 10),
+                                  child: Row(
+                                    crossAxisAlignment: CrossAxisAlignment.end,
+                                    children: <Widget>[
+                                      Container(
+                                        child: Text("私密直播111",
+                                          maxLines: 1,
+                                          style: TextStyle(
+                                            fontSize: 14,
+                                            fontWeight: FontWeight.normal,
+                                            color: Colors.grey,
+                                          ),
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Container(
+                                          margin: EdgeInsets.only(left: 15),
+                                          child: Text("2018-08-20 即将到期",
+                                            maxLines: 1,
+                                            overflow: TextOverflow.ellipsis,
+                                            style: TextStyle(
+                                              fontSize: 12,
+                                              fontWeight: FontWeight.normal,
+                                              color: Colors.grey,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+
+                                    ],
+                                  ),
+                                ),
+
+                              ],
+                            ),
+                          )
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 13),
+                        width: 60,
+                        height: 25,
+                        child: FlatButton(
+                            onPressed: () => {},
+                            textColor: Colors.blue,
+                            color: Colors.white,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(12.5),
+                              side: BorderSide(color: Colors.blue,width: 0.5),
+
+                            ),
+                            child: Text("续费",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal,
+                              ),
+                            )
+                        ),
+
+                      ),
+
+
+
+                    ],
+                  ),
+                ),
                 Wrap(
 //                textDirection: TextDirection.rtl,    文字方向   从左向右还是从右向左
 //                alignment: WrapAlignment.start,   //没试出来结果
@@ -260,7 +390,6 @@ class HomePageContentState extends State<HomePageContent> {
                     ),
                   ],
                 ),
-
 
               ],
             ),
