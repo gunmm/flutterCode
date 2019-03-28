@@ -31,6 +31,29 @@ class HomePageContentState extends State<HomePageContent> {
     await methodChannel.invokeMethod('disMissFlutterVc', '你要被销毁了');
   }
 
+  static const EventChannel eventChannel = const EventChannel('eventChannel');
+
+// 渲染前的操作，类似viewDidLoad
+  @override
+  void initState() {
+    super.initState();
+    // 监听事件，同时发送参数12345
+    eventChannel.receiveBroadcastStream(12345).listen(
+        _onEvent, onError: _onError);
+  }
+  String naviTitle = 'title';
+  // 回调事件
+  void _onEvent(Object event) {
+    setState(() {
+      naviTitle = event.toString();
+    });
+  }
+
+  // 错误返回
+  void _onError(Object error) {
+    print("error:" + error.toString());
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Scaffold (

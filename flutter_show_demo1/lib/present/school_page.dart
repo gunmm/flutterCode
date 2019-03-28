@@ -15,31 +15,51 @@ class SchoolPageState extends State<SchoolPageContent> {
         title: new Text("SchoolPage"),
       ),
 
-      body: Center(
-        child: Container(
-          color: Colors.grey,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
+      body: Container(
+        color: Colors.grey,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.start,
+//          verticalDirection: VerticalDirection.up,
 
-            children: <Widget>[
-              Container(
-                color: Colors.red,
-                child: Text("我是第1个"),
-              ),
-              Container(
-                color: Colors.red,
-                child: Text("我是第2个第2个"),
-              ),
-              Container(
-                color: Colors.red,
-                child: Text("我是第3个第3个第3个"),
-              ),
-            ],
-          ),
+//          textDirection: TextDirection.rtl,
+
+
+          children: <Widget>[
+//            Row(
+//              mainAxisSize: MainAxisSize.min,
+//              verticalDirection: VerticalDirection.down,
+//              crossAxisAlignment: CrossAxisAlignment.start,
+//              children: <Widget>[
+//                Container(
+//                  color: Colors.red,
+//                  child: Text("我是第11个"),
+//                ),
+//                Container(
+//                  height: 60,
+//                  color: Colors.green,
+//                  child: Text("我是第12个"),
+//                ),
+//              ],
+//            ),
+
+            Container(
+              color: Colors.red,
+              child: Text("我是第1个"),
+            ),
+
+            Container(
+              color: Colors.red,
+              child: Text("我是第2个第2个"),
+            ),
+            Container(
+              color: Colors.red,
+              child: Text("我是第3个第3个第3个"),
+            ),
+          ],
         ),
-
       ),
+
 
     );
   }
