@@ -97,7 +97,7 @@ export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 
 3. 修改环境变量
 
-export PATH=`密码`/Users/minzhe/flutter/bin:$PATH
+export PATH="$PWD"/Users/minzhe/flutter/bin:$PATH
 
 4. flutter doctor
 
