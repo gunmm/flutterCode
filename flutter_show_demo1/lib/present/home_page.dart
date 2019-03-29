@@ -22,9 +22,17 @@ class HomePageContentState extends State<HomePageContent> {
   }
 
   static const methodChannel = const MethodChannel('methodChannel');
+
+  // 接收原生平台的方法调用处理
+//  Future methodHandlerAct(MethodCall call) async {
+//
+//    print("-----------call.method:"+call.method);
+//    print("-----------call.arguments:"+call.arguments);
+//
+//  }
+
   _popSaved() {
     _iOSPushToVC();
-
   }
 
   _iOSPushToVC() async {
@@ -37,6 +45,14 @@ class HomePageContentState extends State<HomePageContent> {
   @override
   void initState() {
     super.initState();
+    //接受原生端主动调用的回调
+    methodChannel.setMethodCallHandler((MethodCall call) async {
+      print("-----------call.method:"+call.method);
+      print("-----------call.arguments:"+call.arguments);
+      //
+      return "iOSInvokeFlutter BackString";
+    });
+
     // 监听事件，同时发送参数12345
     eventChannel.receiveBroadcastStream(12345).listen(
         _onEvent, onError: _onError);

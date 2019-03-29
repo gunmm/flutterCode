@@ -12,6 +12,10 @@
 
 @interface MainViewController () <FlutterStreamHandler>
 
+@property (nonatomic, strong) FlutterMethodChannel *messageChannel;
+@property (nonatomic, strong) FlutterViewController *flutterViewController;
+
+
 @end
 
 @implementation MainViewController
@@ -19,6 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    self.flutterViewController = [[FlutterViewController alloc] initWithProject:nil nibName:nil bundle:nil];
+    [self.flutterViewController setInitialRoute:@"applePresent"];
+    
+    // 要与main.dart中一致
+    NSString *channelName = @"methodChannel";
+    self.messageChannel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:self.flutterViewController];
 }
 
 //- (void)viewWillAppear:(BOOL)animated {
@@ -27,23 +37,18 @@
 //}
 
 - (IBAction)presentAct:(id)sender {
-    FlutterViewController* flutterViewController = [[FlutterViewController alloc] initWithProject:nil nibName:nil bundle:nil];
-    [self presentViewController:flutterViewController animated:YES completion:nil];
-    [flutterViewController setInitialRoute:@"applePresent"];
-    
-    // 要与main.dart中一致
-    NSString *channelName = @"methodChannel";
-    FlutterMethodChannel *messageChannel = [FlutterMethodChannel methodChannelWithName:channelName binaryMessenger:flutterViewController];
-    [messageChannel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
+    [self presentViewController:self.flutterViewController animated:YES completion:nil];
+    __weak typeof(self) weakSelf = self;
+    [self.messageChannel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
         if ([call.method isEqualToString:@"disMissFlutterVc"]) {
             NSLog(@"-------------参数传过来的参数：%@", call.arguments);
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [weakSelf dismissViewControllerAnimated:YES completion:nil];
         }
     }];
 
     //方法二
     NSString *channelName2 = @"eventChannel";
-    FlutterEventChannel *evenChannal = [FlutterEventChannel eventChannelWithName:channelName2 binaryMessenger:flutterViewController];
+    FlutterEventChannel *evenChannal = [FlutterEventChannel eventChannelWithName:channelName2 binaryMessenger:self.flutterViewController];
     // 代理FlutterStreamHandler
     [evenChannal setStreamHandler:self];
 }
@@ -70,6 +75,12 @@
     [self.navigationController pushViewController:flutterViewController animated:YES];
 }
 
+- (IBAction)invokeFlutter:(id)sender {
+    //这个事件的实现前提是self.messageChannel有值   也就是
+    [self.messageChannel invokeMethod:@"iOSInvokeFlutter" arguments:@"iOS主动调flutter" result:^(id  _Nullable result) {
+        NSLog(@"%@", result);
+    }];
+}
 
 
 #pragma mark - <FlutterStreamHandler>

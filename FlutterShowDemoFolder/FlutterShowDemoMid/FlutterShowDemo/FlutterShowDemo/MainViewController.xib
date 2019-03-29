@@ -34,10 +34,19 @@
                         <action selector="pushAct:" destination="-1" eventType="touchUpInside" id="tx6-CG-HCO"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zgy-WC-0ZN">
+                    <rect key="frame" x="131.5" y="418.5" width="112" height="30"/>
+                    <state key="normal" title="iOS主动调flutter"/>
+                    <connections>
+                        <action selector="invokeFlutter:" destination="-1" eventType="touchUpInside" id="oMe-cD-GVJ"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="e9w-Q0-ao6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="-100" id="47F-C6-wW0"/>
+                <constraint firstItem="Zgy-WC-0ZN" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="100" id="6Bg-6H-qQ4"/>
+                <constraint firstItem="Zgy-WC-0ZN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ed5-6j-vlE"/>
                 <constraint firstItem="YDf-eL-oGM" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Q0Y-eu-vtn"/>
                 <constraint firstItem="YDf-eL-oGM" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="o3k-fc-WNQ"/>
                 <constraint firstItem="e9w-Q0-ao6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qCc-Di-ldh"/>

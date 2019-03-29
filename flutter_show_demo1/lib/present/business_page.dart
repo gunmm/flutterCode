@@ -33,12 +33,22 @@ class BuinessPageState extends State<BuinessPageContent> {
   }
 
 
+  _deleteAct() {
+    _words.removeRange(10, 20);
+    setState(() {
+
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Scaffold (
       appBar: new AppBar(
         title: new Text("BuinessPage"),
+        actions: <Widget>[
+          new IconButton(
+              icon: new Icon(Icons.layers_clear), onPressed: _deleteAct),
+        ],
       ),
 
       body: Column(
@@ -49,6 +59,7 @@ class BuinessPageState extends State<BuinessPageContent> {
                 child: ListView.separated(
                   itemCount: _words.length,
                   itemBuilder: (context, index) {
+                    print(index);
                     if(_words[index] == loadingTag) {
                       if(_words.length-1 < 60) {
                         _loadData();
