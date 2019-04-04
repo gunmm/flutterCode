@@ -1,6 +1,8 @@
-platform :ios, '10.1'
+platform :ios, '8.0'
 use_frameworks!
 target 'FlutterShowDemo' do
+    pod 'Bugly'
+
 end
 flutter_application_path = '../../../flutter_show_demo1/'
 eval(File.read(File.join(flutter_application_path, '.ios', 'Flutter', 'podhelper.rb')), binding)

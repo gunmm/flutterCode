@@ -1,11 +1,17 @@
 PODS:
+  - Bugly (2.5.0)
   - Flutter (1.0.0)
   - FlutterPluginRegistrant (0.0.1):
     - Flutter
 
 DEPENDENCIES:
+  - Bugly
   - Flutter (from `../../../flutter_show_demo1/.ios/Flutter/engine`)
   - FlutterPluginRegistrant (from `../../../flutter_show_demo1/.ios/Flutter/FlutterPluginRegistrant`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Bugly
 
 EXTERNAL SOURCES:
   Flutter:
@@ -14,9 +20,10 @@ EXTERNAL SOURCES:
     :path: "../../../flutter_show_demo1/.ios/Flutter/FlutterPluginRegistrant"
 
 SPEC CHECKSUMS:
-  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
-  FlutterPluginRegistrant: 5f33f54e5f25444620ff39f2bdee4262d673ec7b
+  Bugly: 3ca9f255c01025582df26f9222893b383c7e4b4e
+  Flutter: 58dd7d1b27887414a370fcccb9e645c08ffd7a6a
+  FlutterPluginRegistrant: 3f4d45b679eb21eb53e786e8884a26157555ce9f
 
-PODFILE CHECKSUM: 3cb6e1440b0e8b0546b95c2d3ca1a30898351203
+PODFILE CHECKSUM: 5cc81f2a0ceea6e762c572f1ebf387c37b93e1ad
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.7.0.beta.3

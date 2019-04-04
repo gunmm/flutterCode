@@ -10,6 +10,7 @@
 #import <FlutterPluginRegistrant/GeneratedPluginRegistrant.h> // Only if you have Flutter Plugins
 #import "MainViewController.h"
 #import "MyFlutterViewController.h"
+#import <Bugly/Bugly.h>
 
 @interface AppDelegate ()
 
@@ -39,11 +40,14 @@
     tabVC.viewControllers = @[nav, nav2];
     self.window.rootViewController = tabVC;
     
-    
+    [Bugly startWithAppId:@"e3b091bab6"];
+
     self.flutterEngine = [[FlutterEngine alloc] initWithName:@"io.flutter" project:nil];
     [self.flutterEngine runWithEntrypoint:nil];
     [GeneratedPluginRegistrant registerWithRegistry:self.flutterEngine];
-    return [super application:application didFinishLaunchingWithOptions:launchOptions];}
+    return [super application:application didFinishLaunchingWithOptions:launchOptions];
+    
+}
 
 
 - (void)applicationWillResignActive:(UIApplication *)application {

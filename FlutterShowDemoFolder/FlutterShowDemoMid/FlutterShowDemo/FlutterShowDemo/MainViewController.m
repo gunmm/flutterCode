@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import <Flutter/Flutter.h>
 #import "FlutterPushViewController.h"
+#import <Bugly/Bugly.h>
 
 @interface MainViewController () <FlutterStreamHandler>
 
@@ -51,6 +52,25 @@
     FlutterEventChannel *evenChannal = [FlutterEventChannel eventChannelWithName:channelName2 binaryMessenger:self.flutterViewController];
     // 代理FlutterStreamHandler
     [evenChannal setStreamHandler:self];
+    
+    //bugly
+    FlutterMethodChannel *channel = [FlutterMethodChannel methodChannelWithName:@"flutter_bugly" binaryMessenger:self.flutterViewController];
+    
+    [channel setMethodCallHandler:^(FlutterMethodCall * _Nonnull call, FlutterResult  _Nonnull result) {
+        NSString *crash_detail = call.arguments[@"crash_detail"];
+        NSString *crash_message = call.arguments[@"crash_message"];
+        if (crash_detail == nil || crash_detail == NULL) {
+            crash_message = @"";
+        }
+        if ([crash_detail isKindOfClass:[NSNull class]]) {
+            crash_message = @"";
+        }
+        NSException *ex = [[NSException alloc]initWithName:crash_message
+                                                    reason:crash_detail
+                                                  userInfo:nil];
+        [Bugly reportException:ex];
+    }];
+
 }
 
 - (IBAction)pushAct:(id)sender {
