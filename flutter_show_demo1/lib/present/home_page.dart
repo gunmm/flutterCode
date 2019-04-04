@@ -18,6 +18,9 @@ class HomePageContentState extends State<HomePageContent> {
   _btnSelect(int currectCount) {
     setState(() {
       _textCount = currectCount;
+      if (_textCount == 2) {
+        throw FormatException("这是个测试的异常");
+      }
     });
   }
 
